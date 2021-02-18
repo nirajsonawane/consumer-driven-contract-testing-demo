@@ -1,0 +1,43 @@
+{
+  "provider": {
+    "name": "Demo"
+  },
+  "consumer": {
+    "name": "demo"
+  },
+  "interactions": [
+    {
+      "description": "Get  Status",
+      "request": {
+        "method": "GET",
+        "path": "/pactstatus",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "body": {
+          "id": 1,
+          "status": "CREATED"
+        }
+      },
+      "providerStates": [
+        {
+          "name": "Status Found"
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "pactSpecification": {
+      "version": "3.0.0"
+    },
+    "pact-jvm": {
+      "version": "4.0.2"
+    }
+  }
+}
