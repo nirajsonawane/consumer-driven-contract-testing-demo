@@ -9,11 +9,10 @@ import org.springframework.cloud.contract.stubrunner.junit.StubRunnerExtension
 import org.springframework.cloud.contract.stubrunner.spring.StubRunnerProperties
 
 @SpringBootTest
-class ConsumerApplicationTests {
+class StatusServiceTests {
 
     @Autowired
-    lateinit var statusService: StatusService
-
+    lateinit var underTest: StatusService
 
     @JvmField
     @RegisterExtension
@@ -25,13 +24,13 @@ class ConsumerApplicationTests {
 
     @Test
     fun getStatus() {
-        val status = statusService.getStatus()
+        val status = underTest.getStatus()
         assertEquals(status, "CREATED")
     }
 
     @Test
     fun getPactStatus() {
-        val status = statusService.getPactStatus()
+        val status = underTest.getPactStatus()
         assertEquals(status, "CREATED")
     }
 
